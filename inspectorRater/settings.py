@@ -17,7 +17,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 APP_PATH = os.path.dirname(os.path.abspath(__file__))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
@@ -37,15 +36,15 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #Inspectors
+    # Inspectors
     'inspectors.apps.InspectorsConfig',
 
-    #The Django sites framework is required
+    # The Django sites framework is required
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-# ... include the providers you want to enable:
+    # ... include the providers you want to enable:
     'allauth.socialaccount.providers.google',
 )
 
@@ -81,7 +80,6 @@ TEMPLATES = (
 
 WSGI_APPLICATION = 'inspectorRater.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
@@ -89,7 +87,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'NAME': '%s/ratemyinspector_db' %APP_PATH,
+        'NAME': '%s/ratemyinspector_db' % APP_PATH,
     }
 }
 
@@ -142,7 +140,7 @@ STATICFILES_DIRS = [
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-#Allauth
+# Allauth
 
 SITE_ID = 3
 
@@ -157,10 +155,10 @@ AUTHENTICATION_BACKENDS = (
 LOGIN_REDIRECT_URL = '/'
 SOCIALACCOUNT_QUERY_EMAIL = True
 SOCIALACCOUNT_PROVIDERS = \
-    { 'google':
-        { 'SCOPE': ['profile', 'email'],
-        'AUTH_PARAMS': { 'access_type': 'online' }}}
+    {'google':
+         {'SCOPE': ['profile', 'email'],
+          'AUTH_PARAMS': {'access_type': 'online'}}}
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ACCOUNT_LOGOUT_ON_GET = True
 
-#/Allauth
+# /Allauth
